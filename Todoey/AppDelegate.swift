@@ -18,10 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         print("Did finish launching with options")
-        
-        //get the path of the userDefaults file
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-        
+                
         return true
     }
 
