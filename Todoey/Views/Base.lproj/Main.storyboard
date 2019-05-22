@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todoey-->
+        <!--Items-->
         <scene sceneID="QIh-cX-V9B">
             <objects>
                 <tableViewController id="Wyo-YS-GOI" customClass="TodoListViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                             <outlet property="delegate" destination="Wyo-YS-GOI" id="6cW-f8-BKp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="fpD-Lt-nI3">
+                    <navigationItem key="navigationItem" title="Items" id="fpD-Lt-nI3">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TMY-GF-SzD">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -75,16 +75,16 @@
             </objects>
             <point key="canvasLocation" x="800.79999999999995" y="138.98050974512745"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Todoey-->
         <scene sceneID="TsR-pY-7IU">
             <objects>
-                <tableViewController id="Gg2-Um-LOc" sceneMemberID="viewController">
+                <tableViewController id="Gg2-Um-LOc" customClass="CategoryViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zX4-UA-C4O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yGk-Ne-0LD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCategoryCell" id="yGk-Ne-0LD" userLabel="CategoryCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yGk-Ne-0LD" id="iqG-oB-14E">
@@ -98,7 +98,15 @@
                             <outlet property="delegate" destination="Gg2-Um-LOc" id="Xq2-iM-tjn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ATf-fE-TPY"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Todoey" id="ATf-fE-TPY" userLabel="Category">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HX4-Mo-fnb">
+                            <connections>
+                                <action selector="addCategoryPressed:" destination="Gg2-Um-LOc" id="iWd-Dl-5dw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="Wyo-YS-GOI" kind="show" identifier="goToItems" id="AKa-0Z-A6Z"/>
                     </connections>
